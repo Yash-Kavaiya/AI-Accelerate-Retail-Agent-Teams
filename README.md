@@ -20,6 +20,8 @@ The main coordinator that routes customer requests to appropriate specialized ag
 - Suggests alternatives for unavailable items
 - Filters products by various criteria
 
+<img width="640" height="350" alt="Product Search Agent" src="https://github.com/user-attachments/assets/2d3e25f7-a753-48c7-b336-b6b970f5a27b" />
+
 #### 2. **Review Text Analysis Agent** 📊
 - Analyzes customer reviews and extracts sentiment
 - Identifies common themes and trends in reviews
@@ -27,12 +29,15 @@ The main coordinator that routes customer requests to appropriate specialized ag
 - Provides sentiment scores and ratings analysis
 - Detects suspicious or fake reviews
 
+<img width="640" height="350" alt="Review Text Analysis Agent" src="https://github.com/user-attachments/assets/9f3bc9a2-7f4e-43b4-9433-f10c60715fe7" />
+
 #### 3. **Inventory Agent** 📦
 - Checks real-time stock levels and availability
 - Tracks inventory across multiple locations
 - Provides low stock alerts and restock notifications
 - Estimates delivery times based on inventory location
 - Manages inventory reservations
+<img width="640" height="350" alt="Inventory Agent" src="https://github.com/user-attachments/assets/673a96fa-7d82-497c-9c13-a9fbd9fdad25" />
 
 #### 4. **Shopping Agent** 🛒
 - Manages shopping cart operations
@@ -41,6 +46,7 @@ The main coordinator that routes customer requests to appropriate specialized ag
 - Processes checkout and payment
 - Provides order tracking information
 - Suggests product bundles and upsells
+<img width="640" height="350" alt="image" src="https://github.com/user-attachments/assets/e49e0b5b-5984-433e-ae70-06782ea277fe" />
 
 #### 5. **Customer Support Agent** 💬
 - Handles customer inquiries and issues
@@ -49,6 +55,8 @@ The main coordinator that routes customer requests to appropriate specialized ag
 - Resolves complaints professionally
 - Provides warranty and product care information
 - Escalates complex issues when needed
+
+<img width="640" height="350" alt="image" src="https://github.com/user-attachments/assets/6e6af8fe-d1e2-4eff-b27d-ad94f81eb9a9" />
 
 ## 🚀 Getting Started
 
