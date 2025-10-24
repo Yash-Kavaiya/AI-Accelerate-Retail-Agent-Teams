@@ -4,6 +4,8 @@ A sophisticated multi-agent retail system built with Google's Agent Development 
 
 ## 🤖 Agent Architecture
 
+<img width="1783" height="976" alt="image" src="https://github.com/user-attachments/assets/45e07284-f059-4f6d-ba2f-0d45d4b64825" />
+
 This system implements a hierarchical multi-agent architecture with a coordinator agent managing five specialized sub-agents:
 
 ### Root Agent: Retail Coordinator
@@ -195,6 +197,8 @@ The system uses ADK's native orchestration capabilities:
 - Context is maintained across agent handoffs
 - Responses are consolidated for a unified customer experience
 
+<img width="3022" height="697" alt="image" src="https://github.com/user-attachments/assets/08933297-96fd-4273-a29c-3be4611fb9d3" />
+
 ## 🔧 Customization
 
 Each agent can be customized by modifying their:
@@ -213,6 +217,8 @@ pytest tests/
 # Run specific test
 pytest tests/test_customer_support_agent_tools.py
 ```
+<img width="1772" height="639" alt="image" src="https://github.com/user-attachments/assets/00d97a83-f094-4121-9e7f-15d3273decf6" />
+
 
 ## 📝 License
 
