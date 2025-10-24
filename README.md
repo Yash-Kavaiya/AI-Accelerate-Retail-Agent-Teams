@@ -63,10 +63,20 @@ pip install -r requirement.txt
 ```
 
 2. Configure your environment:
+   - Copy `retail-agents-team/.env.example` to `retail-agents-team/.env`
+   - Add your API credentials to `.env`:
+
 ```bash
-# Set your Google API key
-export GOOGLE_API_KEY=your_api_key_here
+# Google AI Configuration
+GOOGLE_GENAI_USE_VERTEXAI=0
+GOOGLE_API_KEY=your_google_api_key_here
+
+# Elasticsearch Configuration
+ELASTICSEARCH_CLOUD_URL=your_elasticsearch_cloud_url_here
+ELASTICSEARCH_API_KEY=your_elasticsearch_api_key_here
 ```
+
+**⚠️ Security Note**: Never commit the `.env` file to version control. All credentials are now stored securely in environment variables.
 
 ### Running the Agent
 
@@ -123,12 +133,52 @@ adk run retail-agents-team/
 
 ```
 AI-Accelerate-Retail-Agent-Teams/
-├── README.md
-├── requirement.txt
-└── retail-agents-team/
-    ├── __init__.py
-    └── agent.py          # Multi-agent system definition
+├── README.md                     # This file
+├── requirement.txt               # Project dependencies
+├── docs/                         # 📚 All documentation
+│   ├── INDEX.md                 # Documentation index
+│   ├── QUICKSTART.md            # Quick start guide
+│   ├── SETUP.md                 # Setup instructions
+│   ├── ARCHITECTURE.md          # System architecture
+│   ├── AGENT_CONFIG.md          # Agent configuration
+│   └── [agent-specific docs]   # Individual agent documentation
+├── tests/                        # 🧪 Test files
+│   ├── README.md                # Test documentation
+│   ├── test_*_agent_tools.py   # Agent tests
+│   └── test_*.py                # Infrastructure tests
+├── retail-agents-team/          # 🤖 Agent implementations
+│   ├── __init__.py
+│   ├── agent.py                 # Multi-agent system definition
+│   ├── customer_support_agent/
+│   ├── inventory_agent/
+│   ├── product_search_agent/
+│   ├── review_text_analysis_agent/
+│   └── shopping_agent/
+└── ui/                          # 🖥️ User interface
+    ├── index.html
+    ├── server.py
+    └── static/
 ```
+
+## 📖 Documentation
+
+All documentation is now organized in the `docs/` folder with comprehensive guides for each agent:
+
+### 🚀 Getting Started
+- **[Documentation Index](docs/INDEX.md)** - Complete documentation overview
+- **[Quick Start Guide](docs/QUICKSTART.md)** - Get up and running quickly
+- **[Setup Instructions](docs/SETUP.md)** - Detailed setup guide
+- **[Architecture Overview](docs/ARCHITECTURE.md)** - System design and architecture
+- **[Quick Reference](docs/QUICK_REFERENCE.md)** - Command shortcuts and tips
+
+### 🤖 Agent Documentation (Detailed Guides)
+Each agent has its own comprehensive documentation with tools, diagrams, examples, and best practices:
+
+- **[🔍 Product Search Agent](docs/PRODUCT_SEARCH_AGENT.md)** - Text & image-based product search (8 tools)
+- **[📊 Review Analysis Agent](docs/REVIEW_ANALYSIS_AGENT.md)** - Semantic review analysis with RRF (6 tools)
+- **[📦 Inventory Agent](docs/INVENTORY_AGENT.md)** - Real-time inventory & demand forecasting (7 tools)
+- **[🛒 Shopping Agent](docs/SHOPPING_AGENT.md)** - Customer behavior & transaction analytics (7 tools)
+- **[💬 Customer Support Agent](docs/CUSTOMER_SUPPORT_AGENT.md)** - FAQ-based support system (5 tools)
 
 ## 🛠️ Technology Stack
 
@@ -152,6 +202,18 @@ Each agent can be customized by modifying their:
 - `description`: Specify agent expertise
 - `tools`: Add custom tools for extended functionality (coming soon)
 
+## 🧪 Testing
+
+All test files are organized in the `tests/` directory. See [tests/README.md](tests/README.md) for detailed testing instructions.
+
+```bash
+# Run all tests
+pytest tests/
+
+# Run specific test
+pytest tests/test_customer_support_agent_tools.py
+```
+
 ## 📝 License
 
 This project is built using Google's ADK framework.
@@ -163,3 +225,7 @@ Contributions are welcome! Feel free to submit issues or pull requests.
 ## 📞 Support
 
 For issues or questions, please open an issue in the repository.
+
+---
+
+**Note**: This project has been reorganized for better structure. See [docs/PROJECT_REORGANIZATION.md](docs/PROJECT_REORGANIZATION.md) for details on the new organization.

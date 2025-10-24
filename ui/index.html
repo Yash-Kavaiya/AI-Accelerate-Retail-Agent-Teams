@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Retail Agent Team</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <button id="menuBtn" class="btn btn-secondary mobile-only">☰</button>
+                    <h1>🤖 AI Retail Agent Team</h1>
+                </div>
+                <div class="header-actions">
+                    <button id="saveBtn" class="btn btn-secondary">💾 Save</button>
+                    <button id="historyBtn" class="btn btn-secondary">📚 History</button>
+                    <button id="clearBtn" class="btn btn-danger">🗑️ Clear</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Select Agent</h3>
+                    <button id="closeSidebarBtn" class="btn-close mobile-only">×</button>
+                </div>
+                <div class="agent-list">
+                    <div class="agent-card active" data-agent="retail_coordinator">
+                        <div class="agent-icon">🎯</div>
+                        <div class="agent-name">Coordinator</div>
+                    </div>
+                    <div class="agent-card" data-agent="product_search_agent">
+                        <div class="agent-icon">🔍</div>
+                        <div class="agent-name">Product Search</div>
+                    </div>
+                    <div class="agent-card" data-agent="review_text_analysis_agent">
+                        <div class="agent-icon">📊</div>
+                        <div class="agent-name">Review Analysis</div>
+                    </div>
+                    <div class="agent-card" data-agent="inventory_agent">
+                        <div class="agent-icon">📦</div>
+                        <div class="agent-name">Inventory</div>
+                    </div>
+                    <div class="agent-card" data-agent="shopping_agent">
+                        <div class="agent-icon">🛒</div>
+                        <div class="agent-name">Shopping</div>
+                    </div>
+                    <div class="agent-card" data-agent="customer_support_agent">
+                        <div class="agent-icon">💬</div>
+                        <div class="agent-name">Support</div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Chat Area -->
+            <main class="chat-area">
+                <div id="messages" class="messages"></div>
+                <div class="input-area">
+                    <textarea id="messageInput" placeholder="Type your message..." rows="1"></textarea>
+                    <button id="sendBtn" class="btn btn-primary">Send</button>
+                </div>
+            </main>
+
+            <!-- History Panel (hidden by default) -->
+            <aside id="historyPanel" class="history-panel hidden">
+                <div class="history-header">
+                    <h3>Conversation History</h3>
+                    <button id="closeHistoryBtn" class="btn-close">×</button>
+                </div>
+                <input type="text" id="historySearch" class="search-input" placeholder="Search conversations...">
+                <div id="historyList" class="history-list"></div>
+                <div id="emptyHistory" class="empty-state">
+                    <p>💬 No saved conversations</p>
+                    <small>Click "Save" to save your chats</small>
+                </div>
+            </aside>
+        </div>
+        
+        <!-- Sidebar Overlay for Mobile -->
+        <div id="sidebarOverlay" class="sidebar-overlay"></div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
