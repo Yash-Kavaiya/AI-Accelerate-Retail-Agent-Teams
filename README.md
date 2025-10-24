@@ -219,6 +219,7 @@ pytest tests/test_customer_support_agent_tools.py
 ```
 <img width="1772" height="639" alt="image" src="https://github.com/user-attachments/assets/00d97a83-f094-4121-9e7f-15d3273decf6" />
 
+<img width="933" height="373" alt="image" src="https://github.com/user-attachments/assets/e25692a6-9236-4035-814e-c8504dbbc72d" />
 
 ## 📝 License
 
