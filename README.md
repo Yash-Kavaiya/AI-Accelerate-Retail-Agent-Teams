@@ -2,6 +2,9 @@
 
 A sophisticated multi-agent retail system built with Google's Agent Development Kit (ADK), featuring specialized sub-agents for comprehensive retail operations.
 
+Devpost:- https://devpost.com/software/ai-retail-agent-team-intelligent-retail-operations-platform
+YouTube :- https://youtu.be/1_yr1BvFLCI?si=dmt0TqS2d_oAMVYt
+
 ## 🤖 Agent Architecture
 
 <img width="1783" height="976" alt="image" src="https://github.com/user-attachments/assets/45e07284-f059-4f6d-ba2f-0d45d4b64825" />
