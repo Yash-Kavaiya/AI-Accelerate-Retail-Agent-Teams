@@ -11,6 +11,8 @@ YouTube :- https://youtu.be/1_yr1BvFLCI?si=dmt0TqS2d_oAMVYt
 <img width="1783" height="976" alt="image" src="https://github.com/user-attachments/assets/45e07284-f059-4f6d-ba2f-0d45d4b64825" />
 
 This system implements a hierarchical multi-agent architecture with a coordinator agent managing five specialized sub-agents:
+<img width="768" height="512" alt="image" src="https://github.com/user-attachments/assets/c4b3aff8-291f-4a59-8e94-bf69af7ddcdd" />
+
 
 ### Root Agent: Retail Coordinator
 The main coordinator that routes customer requests to appropriate specialized agents and combines their outputs for comprehensive responses.
@@ -23,7 +25,8 @@ The main coordinator that routes customer requests to appropriate specialized ag
 - Compares similar products
 - Suggests alternatives for unavailable items
 - Filters products by various criteria
-
+- 
+<img width="768" height="512" alt="image" src="https://github.com/user-attachments/assets/043d9ec3-687c-4fae-963e-bba12a5131e3" />
 <img width="640" height="350" alt="Product Search Agent" src="https://github.com/user-attachments/assets/2d3e25f7-a753-48c7-b336-b6b970f5a27b" />
 
 #### 2. **Review Text Analysis Agent** 📊
