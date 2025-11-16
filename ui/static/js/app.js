@@ -4,7 +4,7 @@ const APP = {
     currentAgent: 'retail_coordinator',
     eventSource: null,
     messages: [],
-    
+
     elements: {
         messages: document.getElementById('messages'),
         messageInput: document.getElementById('messageInput'),
@@ -26,9 +26,28 @@ const APP = {
     },
 
     init() {
+        this.setupMarkdown();
         this.setupEventListeners();
         this.connectSSE();
         console.log('✅ App initialized. Session:', this.sessionId);
+    },
+
+    setupMarkdown() {
+        // Configure marked with custom renderer
+        marked.setOptions({
+            breaks: true,
+            gfm: true,
+            highlight: function(code, lang) {
+                if (lang && hljs.getLanguage(lang)) {
+                    try {
+                        return hljs.highlight(code, { language: lang }).value;
+                    } catch (e) {
+                        console.error('Highlight error:', e);
+                    }
+                }
+                return hljs.highlightAuto(code).value;
+            }
+        });
     },
 
     setupEventListeners() {
@@ -151,26 +170,55 @@ const APP = {
     addMessage(content, isUser) {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${isUser ? 'user' : 'agent'}`;
-        
+
         const avatar = document.createElement('div');
         avatar.className = 'message-avatar';
         avatar.textContent = isUser ? 'U' : 'A';
-        
+
         const contentDiv = document.createElement('div');
-        contentDiv.className = 'message-content';
-        contentDiv.textContent = content;
-        
+        contentDiv.className = 'message-content markdown-body';
+
+        if (isUser) {
+            // User messages - plain text
+            contentDiv.textContent = content;
+        } else {
+            // Agent messages - render as markdown
+            if (content) {
+                const rendered = marked.parse(content);
+                contentDiv.innerHTML = DOMPurify.sanitize(rendered);
+                // Highlight code blocks
+                contentDiv.querySelectorAll('pre code').forEach((block) => {
+                    hljs.highlightElement(block);
+                });
+            }
+        }
+
         messageDiv.appendChild(avatar);
         messageDiv.appendChild(contentDiv);
         this.elements.messages.appendChild(messageDiv);
         this.scrollToBottom();
+
+        return messageDiv;
     },
 
     appendToLastMessage(text) {
         const lastMessage = this.elements.messages.lastElementChild;
         if (lastMessage && lastMessage.classList.contains('agent')) {
             const content = lastMessage.querySelector('.message-content');
-            content.textContent += text;
+            // Append text and re-render markdown
+            const currentText = content.getAttribute('data-raw-text') || '';
+            const newText = currentText + text;
+            content.setAttribute('data-raw-text', newText);
+
+            // Render markdown
+            const rendered = marked.parse(newText);
+            content.innerHTML = DOMPurify.sanitize(rendered);
+
+            // Highlight code blocks
+            content.querySelectorAll('pre code').forEach((block) => {
+                hljs.highlightElement(block);
+            });
+
             this.scrollToBottom();
         }
     },
